@@ -14,7 +14,7 @@
 		<cfset this.successes = arguments.testResults.testSuccesses />
 		<cfset this.totalExecutionTime = arguments.testResults.totalExecutionTime />
 		<cfset this.testResults = arguments.testResults.results />
-		<cfset this.installRoot = createObject("component","ComponentUtils").getComponentRoot() />
+		<cfset this.installRoot = replace ( createObject("component","ComponentUtils").getComponentRoot(), ".", "/", "ALL" ) />
     <cfset totalBad = this.failures+this.errors />
     <cfif totalBad eq 0 >
       <cfset this.sucessRatio = 1 />
